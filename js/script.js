@@ -1,14 +1,4 @@
-// 使用 IIFE 封装作用域
 (() => {
-    /* 加载动画处理 */
-    const handleLoaderTransition = () => {
-        const loader = document.getElementById("loading-warp");
-        const onTransitionEnd = () => (loader.style.display = "none");
-        
-        loader.classList.add("loading-animations-out");
-        loader.addEventListener('transitionend', onTransitionEnd, { once: true });
-    };
-
     /* 页面导航系统 */
     const initNavigation = () => {
         const mainElements = [
@@ -96,7 +86,6 @@
 
     /* 初始化入口 */
     window.addEventListener('load', () => {
-        handleLoaderTransition();
         initNavigation();
         initTheme();
         initConsole();
