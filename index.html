@@ -74,7 +74,7 @@
                 </div>
                 <!-- footer -->
                 <footer class="Ayou_footer">
-                    <p class="copyright">© 2011-<script type="text/javascript">copyright=new Date();update=copyright.getFullYear();document.write(""+ update + "");</script> huangbin.net, All rights reserved.</p>
+                    <p class="copyright">© 2011-<script type="text/javascript">document.write(new Date().getFullYear())</script> huangbin.net, All rights reserved.</p>
                     <p class="model">模式切换&nbsp;
                         <input id="switch_default" type="checkbox" class="switch_default" aria-label="模式切换">
                         <label for="switch_default" class="toggleBtn"></label>
@@ -85,48 +85,5 @@
     </main>
     <script src="./js/jquery.min.js"></script>
     <script src="./js/script.js"></script>
-<style>.footnote-insite-text{color:#F9FAFC;}</style>
-    <script>
-    const agentId = "eIjz24RwRL5Kwz0jaog5ukGzfdxcslRr",
-          uidKey = "lj_chat_uid",
-          uidExpire = 864000; // 10天（秒）
-
-    let uid = getCookie(uidKey);
-    if (!uid) {
-        uid = generateUUID();
-        setCookie(uidKey, uid, uidExpire);
-    }
-
-    function generateUUID() {
-        let d = Date.now();
-        if (performance?.now) d += performance.now();
-        return Number('-xxxxxxxxxx'.replace(/x/g, () => (d + Math.random() * 10) % 10 | 0));
-    }
-
-    function setCookie(n, v, s) {
-        const e = new Date();
-        e.setTime(e.getTime() + s * 1000);
-        document.cookie = `${n}=${escape(v)};expires=${e.toGMTString()};path=/`;
-    }
-
-    function getCookie(n) {
-        const m = document.cookie.match(new RegExp("(^| )"+n+"=([^;]*)"));
-        return m ? unescape(m[2]) : null;
-    }
-
-    const scriptEl = document.createElement("script");
-    scriptEl.src = "https://gh.bingdou.com.cn/gh/yellowside/cdnjs/lingjing-agent/1.0.12/index.global.js";
-    scriptEl.onload = () => {
-        const chat = new LingJingAgent.Chat({
-            agentId,
-            uid,
-            container: undefined,
-            entry: { container: undefined, image: undefined }
-        });
-        chat.showEntry();
-    };
-    document.body.appendChild(scriptEl);
-</script>
 </body>
 </html>
-
